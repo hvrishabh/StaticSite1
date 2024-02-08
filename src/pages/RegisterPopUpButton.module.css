@@ -10,11 +10,11 @@
 
 .registerClass:hover {
   color: purple;
-  font-size: large;
+  /* font-size: large; */
   background-color: white;
   border-radius: 5px;
   padding: 5px;
-  margin: 5px;
+  /* margin: 5px; */
   transition-duration: 500ms;
 }
 
