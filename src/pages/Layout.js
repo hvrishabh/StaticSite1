@@ -2,9 +2,13 @@ import { NavLink, Outlet } from "react-router-dom";
 import styles from "./Layout.module.css";
 import Footer from "./Footer";
 import RegisterPopUpButton from "./RegisterPopUpButton";
+import CounterApp from "../smallApps/CounterApp";
+import { useContext } from "react";
+import { registerContext } from "../contexts/registerContext";
 const { nav, navlink, listItem } = styles;
 
 function Layout() {
+  const { showApp, setShowApp } = useContext(registerContext);
   return (
     <>
       <nav
@@ -26,12 +30,21 @@ function Layout() {
               Contact Us
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              onClick={() => setShowApp(false)}
+              className={navlink}
+              to="demo"
+            >
+              Demo Projects
+            </NavLink>
+          </li>
         </ul>
 
         <RegisterPopUpButton />
       </nav>
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

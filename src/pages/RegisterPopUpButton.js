@@ -10,8 +10,8 @@ import { registerContext } from "../contexts/registerContext";
 const { registerClass } = styles;
 
 function RegisterPopUpButton() {
-  const test = useContext(registerContext);
-  console.log(test);
+  // const test = useContext(registerContext);
+  // console.log(test);
 
   const [show, setShow] = useState(false);
 
