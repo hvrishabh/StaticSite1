@@ -1,0 +1,16 @@
+.registerForm {
+  border: solid black 2px;
+}
+
+.registerLabelClass {
+  width: 20%;
+  margin: 0.5rem;
+  font-weight: 500;
+}
+
+.registerInputClass {
+  width: auto;
+  margin: 0.5rem;
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+}

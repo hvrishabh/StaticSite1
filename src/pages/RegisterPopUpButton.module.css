@@ -1,0 +1,25 @@
+.registerClass {
+  list-style-type: none;
+  margin: 5px;
+  size: 2rem;
+  font-weight: 500;
+  padding: 5px;
+  background: black;
+  border-radius: 5px;
+}
+
+.registerClass:hover {
+  color: purple;
+  font-size: large;
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  transition-duration: 500ms;
+}
+
+.registerClass {
+  list-style-type: none;
+  color: white;
+  text-decoration: none;
+}
