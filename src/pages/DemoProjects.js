@@ -5,16 +5,17 @@ import { registerContext } from "../contexts/registerContext";
 
 function DemoProjects() {
   const { showApp, setShowApp } = useContext(registerContext);
+  // console.log(showApp);
+  const navigate = useNavigate();
 
-  //   const showEffect = useEffect(() => {
-  //     function showFunc() {
-  //       setShowApp(true);
-  //     }
-  //     showFunc();
-  //     // return setShowApp(false);
-  //   }, [showApp]);
-
-  console.log(showApp);
+  useEffect(() => {
+    function onloadfunc() {
+      window.addEventListener("load", () => {
+        navigate("/demo");
+      });
+    }
+    onloadfunc();
+  });
 
   function showEffect() {
     setShowApp(true);
@@ -40,8 +41,8 @@ function DemoProjects() {
         </li>
         <li>
           {/* <NavLink onClick={() => setShowApp(true)} to="app2"> */}
-          <NavLink onClick={showEffect} to="app2">
-            app1
+          <NavLink onClick={showEffect} to="DaysCalculator">
+            DaysCalculator
           </NavLink>
         </li>
       </ul>

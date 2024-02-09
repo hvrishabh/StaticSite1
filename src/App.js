@@ -7,7 +7,7 @@ import DemoProjects from "./pages/DemoProjects";
 import { useState } from "react";
 import { registerContext } from "./contexts/registerContext";
 import CounterApp from "./smallApps/CounterApp";
-import App2 from "./smallApps/App2";
+import DaysCalculator from "./smallApps/DaysCalculator";
 
 function App() {
   const [name, setName] = useState("");
@@ -26,7 +26,7 @@ function App() {
             <Route path="contactus" element={<ContactUs />} />
             <Route path="demo" element={<DemoProjects />}>
               <Route path="counterapp" element={<CounterApp />} />
-              <Route path="app2" element={<App2 />} />
+              <Route path="DaysCalculator" element={<DaysCalculator />} />
             </Route>
           </Route>
         </Routes>
