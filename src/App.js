@@ -8,6 +8,9 @@ import { useState } from "react";
 import { registerContext } from "./contexts/registerContext";
 import CounterApp from "./smallApps/CounterApp";
 import DaysCalculator from "./smallApps/DaysCalculator";
+import ImportData from "./smallApps/ImportData";
+import ResuableTable from "./smallApps/ReusableTable";
+import TODO from "./smallApps/TODO";
 
 function App() {
   const [name, setName] = useState("");
@@ -27,6 +30,9 @@ function App() {
             <Route path="demo" element={<DemoProjects />}>
               <Route path="counterapp" element={<CounterApp />} />
               <Route path="DaysCalculator" element={<DaysCalculator />} />
+              <Route path="ReusableTable" element={<ResuableTable />} />
+              <Route path="ImportData" element={<ImportData />} />
+              <Route path="todo" element={<TODO />} />
             </Route>
           </Route>
         </Routes>
