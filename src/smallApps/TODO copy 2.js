@@ -27,7 +27,7 @@ function TODO() {
   const [taskToAdd, setTaskToAdd] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [tasks, setTasks] = useState(demo);
-  const [updateValue, setUpdateValue] = useState();
+  const [updateValue, setUpdateValue] = useState("");
   // const [checked, setChecked] = useState(false);
 
   function handleAddTask(e) {
@@ -71,9 +71,15 @@ function TODO() {
   }
 
   function handleUpdateTask(e, id) {
+    // console.log(e.target.parentNode.getElementById(''));
+
+    // console.log(id, e?.target?.innerHTML);
     const handleUpdateTasklist = tasks.map((task) => {
+      console.log(id);
+
       if (task.updateStatus) {
-        task.task = updateValue;
+        console.log(document.getElementById(id + "_ID").value);
+        task.task = document.getElementById(id + "_ID").value;
       }
 
       if (task.id === id) {
@@ -129,8 +135,8 @@ function TODO() {
                   <input
                     type="text"
                     id={`${task.id}_ID`}
-                    defaultValue={task.task}
-                    onChange={(e) => setUpdateValue(e.target.value)}
+                    // value={task.task}
+                    // onChange={(e) => e.target.value}
                   />
                 </p>
               ) : (

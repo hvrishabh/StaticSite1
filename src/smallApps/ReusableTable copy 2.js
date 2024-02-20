@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-// import $, { param } from "jquery";
+import $, { param } from "jquery";
 let d;
 
 function ReusableTable() {
@@ -8,13 +8,13 @@ function ReusableTable() {
   const [data, setData] = useState("empty");
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
-  const [sortState, setSortState] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
       const request = await fetch(url);
       d = await request.json();
       setData(d);
+
       setLoading(false);
     }
     fetchData();
@@ -22,8 +22,8 @@ function ReusableTable() {
 
   useEffect(() => {
     function search() {
-      // console.log(searchQuery);
-      // console.log(data);
+      console.log(searchQuery);
+      console.log(data);
       const filteredData = d?.filter(
         (Sdata) =>
           Sdata.username
@@ -43,29 +43,7 @@ function ReusableTable() {
     } else {
       search();
     }
-
-    // console.log("sssssssssss");
   }, [searchQuery]);
-
-  useEffect(() => {
-    if (loading) {
-      console.log("loading...");
-    } else {
-      data?.sort(function (a, b) {
-        if (a.username < b.username) {
-          return -1;
-        }
-        if (a.username > b.username) {
-          return 1;
-        }
-        return 0;
-      });
-      console.log(data);
-      setData(data);
-    }
-
-    // console.log(users);
-  }, [sortState]);
 
   // function search(e) {
   //   let searchQuery = e.target.value;
@@ -110,10 +88,10 @@ function ReusableTable() {
         />
 
         <span>
-          <button onClick={() => setSortState(true)}>⬆</button>
+          <button>⬆</button>
         </span>
         <span>
-          <button onClick={() => setSortState(false)}>⬇</button>
+          <button>⬇</button>
         </span>
       </div>
       {loading
