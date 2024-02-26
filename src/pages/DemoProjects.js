@@ -61,6 +61,11 @@ function DemoProjects() {
             TODO App
           </NavLink>
         </li>
+        <li>
+          <NavLink onClick={showEffect} to="CompleteToDoApp">
+            CompleteToDoApp
+          </NavLink>
+        </li>
       </ul>
       {/* <Outlet /> */}
     </div>

@@ -82,7 +82,7 @@ function TODO() {
       return task;
     });
     setTasks(handleUpdateTasklist);
-    console.log(tasks);
+    // console.log(tasks);
   }
   return (
     <div>
@@ -128,7 +128,7 @@ function TODO() {
                 <p>
                   <input
                     type="text"
-                    id={`${task.id}_ID`}
+                    // id={`${task.id}_ID`}
                     defaultValue={task.task}
                     onChange={(e) => setUpdateValue(e.target.value)}
                   />
